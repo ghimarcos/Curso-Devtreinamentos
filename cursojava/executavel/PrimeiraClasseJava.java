@@ -7,6 +7,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Autenticar;
+import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
 import cursojava.constantes.StatusAluno;
 
@@ -20,7 +22,13 @@ public class PrimeiraClasseJava {
 		 * sequencia de valores tbm
 		 */
 		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
-
+		Diretor diretor = new Diretor();
+		
+		diretor.setLogin(JOptionPane.showInputDialog("LOGIN:"));
+		diretor.setSenha(JOptionPane.showInputDialog("SENHA:"));
+		
+		if(new Autenticar(diretor).autenticar()) {
+			
 		for (int qtd = 1; qtd <= 2; qtd++) {
 
 			String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
@@ -120,6 +128,9 @@ public class PrimeiraClasseJava {
 					+ aluno.getMediaNota());
 		}
 
-	}
+	 }else {
+		 JOptionPane.showMessageDialog(null, "LOGIN OU SENHA INCORRETO");
+	 }
+}
 
 }

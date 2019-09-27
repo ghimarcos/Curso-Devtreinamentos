@@ -45,7 +45,7 @@ public class ArrayVetor {
 
 			}
 
-			System.out.println("A maior nota da disciplina é " + notaMax);
+			System.out.println("A maior nota de "+ d.getDisciplina() + " é " + notaMax);
 		}
 
 	}
